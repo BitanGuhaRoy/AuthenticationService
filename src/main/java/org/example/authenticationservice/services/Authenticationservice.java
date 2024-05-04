@@ -1,6 +1,6 @@
 package org.example.authenticationservice.services;
 
-import io.jsonwebtoken.Jwts;
+//import io.jsonwebtoken.Jwts;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.authenticationservice.dtos.*;
@@ -68,14 +68,15 @@ public class Authenticationservice
         long expiryTime= System.currentTimeMillis()+3600000;
         Date date= new Date(expiryTime);
 
-        String jwtToken= Jwts.builder()
-                .setSubject(" User Login" + user.getEmail())
-                .setIssuedAt(new Date())
-                .setExpiration(date)
-                .claim("roles", user.getRoles())
-                .claim("userid", user.getId())
-                .claim("email", user.getEmail())
-                .compact();
+        String jwtToken= "I'm dummy token";
+//                Jwts.builder()
+//                .setSubject(" User Login" + user.getEmail())
+//                .setIssuedAt(new Date())
+//                .setExpiration(date)
+//                .claim("roles", user.getRoles())
+//                .claim("userid", user.getId())
+//                .claim("email", user.getEmail())
+//                .compact();
 
         UserDto userDto= UserDto.from(user);
 
