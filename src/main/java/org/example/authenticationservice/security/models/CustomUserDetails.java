@@ -1,7 +1,9 @@
 package org.example.authenticationservice.security.models;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.example.authenticationservice.models.Role;
 import org.example.authenticationservice.models.User;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,6 +14,8 @@ import java.util.Collection;
 import java.util.List;
 @JsonDeserialize
 @NoArgsConstructor
+@Getter
+@Setter
 public class CustomUserDetails implements UserDetails {
     private List<GrantedAuthority> authorities;
     private String password;
@@ -75,4 +79,10 @@ public class CustomUserDetails implements UserDetails {
     public boolean isEnabled() {
         return enabled;
     }
+
+
+    public Long getUserId() {
+        return userId;
+    }
+
 }

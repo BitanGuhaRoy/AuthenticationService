@@ -6,6 +6,7 @@ import org.example.authenticationservice.models.Role;
 import org.springframework.security.core.GrantedAuthority;
 @JsonDeserialize
 @NoArgsConstructor
+
 public class CustomGrantedAuthority implements GrantedAuthority {
 
     private String authority;
